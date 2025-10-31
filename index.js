@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config(); // load MONGODB_URL from .env
 
 const app = express();
+app.use(express.json({ limit: "20kb" }));
 const PORT = 6000;
 
 connectDB().then(() => {
